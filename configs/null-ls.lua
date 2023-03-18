@@ -4,19 +4,40 @@ if not present then
   return
 end
 
-local b = null_ls.builtins
+local diagnostics = require("null-ls").builtins.diagnostics
+local formatting = require("null-ls").builtins.formatting
+local code_actions = require("null-ls").builtins.code_actions
 
 local sources = {
+  -- check spell
+  diagnostics.cspell.with {
+    diagnostics_format = "[cspell] #{m}\n(#{c})",
+  },
+  code_actions.cspell,
 
-  -- webdev stuff
-  b.formatting.deno_fmt, -- choosed deno for ts/js files cuz its very fast!
-  b.formatting.prettier.with { filetypes = { "html", "markdown", "css" } }, -- so prettier works only on these filetypes
+  -- js,ts
+  code_actions.eslint_d,
+  formatting.prettierd,
+  formatting.eslint_d,
+  diagnostics.eslint_d.with {
+    diagnostics_format = "[eslint] #{m}\n(#{c})",
+    filetypes = { "js", "jsx", "ts", "tsx" },
+  },
 
-  -- Lua
-  b.formatting.stylua,
+  -- ruby
+  diagnostics.rubocop.with {
+    command = "bundle",
+    args = vim.list_extend({ "exec", "rubocop" }, null_ls.builtins.diagnostics.rubocop._opts.args),
 
-  -- cpp
-  b.formatting.clang_format,
+    diagnostics_format = "[rubocop] #{m}\n(#{c})",
+  },
+  formatting.rubocop.with {
+    command = "bundle",
+    args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args),
+  },
+
+  --lua
+  formatting.stylua,
 }
 
 null_ls.setup {

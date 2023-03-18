@@ -3,6 +3,7 @@ local M = {}
 M.disabled = {
   n = {
       ["gr"] = "",
+      ["<C-c>"] = "",
   },
   v = {
       ["gr"] = "",
@@ -26,7 +27,12 @@ M.general = {
 
     -- Copy all
     ["<D-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
+    ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", " ", opts = { nowait = true } },
   },
+  i= {
+
+    ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true }},
+  }
 }
 
 M.comment = {
