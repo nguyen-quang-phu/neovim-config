@@ -18,7 +18,6 @@ local plugins = {
     },
     config = function()
       require "plugins.configs.lspconfig"
-      require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
   },
 
@@ -142,6 +141,12 @@ local plugins = {
   {
     "tpope/vim-surround",
     lazy = false,
+  },
+  {
+    "folke/trouble.nvim",
+    config = function()
+      require("trouble").setup {}
+    end,
   },
 }
 
