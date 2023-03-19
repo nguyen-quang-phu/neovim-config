@@ -4,7 +4,7 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require "lspconfig"
 
 -- if you just want default config for the servers then put them in a table
-local servers = { "html", "cssls", "tsserver", "clangd", "solargraph" }
+local servers = { "html", "cssls", "tsserver", "clangd","solargraph" }
 
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
@@ -15,12 +15,3 @@ end
 
 --
 -- lspconfig.pyright.setup { blabla}
-lspconfig.solargraph.setup {
-  on_attach = on_attach,
-  capabilities = capabilities,
-  settings = {
-    solargraph = {
-      diagnostics = false,
-    },
-  },
-}
