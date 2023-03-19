@@ -2,37 +2,37 @@
 local M = {}
 M.disabled = {
   n = {
-      ["gr"] = "",
-      ["<C-c>"] = "",
+    ["gr"] = "",
+    ["<C-c>"] = "",
   },
   v = {
-      ["gr"] = "",
-  }
+    ["gr"] = "",
+  },
 }
 M.general = {
   n = {
     [";"] = { ":", "enter command mode", opts = { nowait = true } },
-        -- switch between windows
-    ["<D-w>h"] = { "<C-w>h", "window left" },
-    ["<D-w>l"] = { "<C-w>l", "window right" },
-    ["<D-w>j"] = { "<C-w>j", "window down" },
-    ["<D-w>k"] = { "<C-w>k", "window up" },
+    -- switch between windows
+    ["<left>"] = { "<C-w>h", "window left" },
+    ["<right>"] = { "<C-w>l", "window right" },
+    ["<down>"] = { "<C-w>j", "window down" },
+    ["<up>"] = { "<C-w>k", "window up" },
     ["<D-w>v"] = { "<C-w>v", "split vertical" },
     ["<D-w>s"] = { "<C-w>s", "split horizontal" },
     ["<D-w>o"] = { "<C-w>o", "only window" },
     ["<D-w>q"] = { "<C-w>q", "close window" },
 
-        -- save
+    -- save
     ["<D-s>"] = { "<cmd> w <CR>", "save file" },
 
     -- Copy all
     ["<D-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
-    ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr>", " ", opts = { nowait = true } },
+    ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr><cmd> w <CR>", " ", opts = { nowait = true } },
   },
-  i= {
+  i = {
 
-    ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true }},
-  }
+    ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
+  },
 }
 
 M.comment = {
@@ -61,7 +61,7 @@ M.nvimtree = {
   n = {
     ["<D-b>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
     ["<S-D-e>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
-  }
+  },
 }
 
 M.telescope = {
@@ -152,17 +152,16 @@ M.nvterm = {
   },
 }
 
-M.lspconfig = {
-}
+M.lspconfig = {}
 
 M.replace_with_register = {
   n = {
-    ["gr"] = { "<Plug>ReplaceWithRegisterOperator" ,'ReplaceWithRegisterOperator'},
-    ["grr"] = { "<Plug>ReplaceWithRegisterLine",'ReplaceWithRegisterLine' },
+    ["gr"] = { "<Plug>ReplaceWithRegisterOperator", "ReplaceWithRegisterOperator" },
+    ["grr"] = { "<Plug>ReplaceWithRegisterLine", "ReplaceWithRegisterLine" },
   },
-  v ={
-    ["gr"] = { "<Plug>ReplaceWithRegisterVisual",'ReplaceWithRegisterVisual'},
-  }
+  v = {
+    ["gr"] = { "<Plug>ReplaceWithRegisterVisual", "ReplaceWithRegisterVisual" },
+  },
 }
 
 M.nvterm = {
@@ -235,16 +234,16 @@ M.nvterm = {
 
 M.lspsaga = {
   n = {
-    ["gd"] = { "<Cmd>Lspsaga lsp_finder<CR>" ,'Lspsaga lsp_finder'},
-    ["<D-.>"] = { "<Cmd>Lspsaga code_action<Cr>" ,'Lspsaga code_action'},
-  }
+    ["gd"] = { "<Cmd>Lspsaga lsp_finder<CR>", "Lspsaga lsp_finder" },
+    ["<D-.>"] = { "<Cmd>Lspsaga code_action<Cr>", "Lspsaga code_action" },
+  },
 }
 
 M.yanky = {
   n = {
-    ["y"] = { "<Plug>(YankyYank)" ,'YankyYank'},
-    ["p"] = { "<Plug>(YankyPutAfter)" ,'YankyPutAfter'},
-    ["P"] = { "<Plug>(YankyPutBefore)" ,'YankyPutBefore'},
-  }
+    ["y"] = { "<Plug>(YankyYank)", "YankyYank" },
+    ["p"] = { "<Plug>(YankyPutAfter)", "YankyPutAfter" },
+    ["P"] = { "<Plug>(YankyPutBefore)", "YankyPutBefore" },
+  },
 }
 return M

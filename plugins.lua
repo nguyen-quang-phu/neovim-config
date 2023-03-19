@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -26,6 +26,11 @@ local plugins = {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
+    dependencies = {
+      {
+        "nvim-treesitter/nvim-treesitter-textobjects",
+      },
+    },
   },
 
   {
@@ -53,50 +58,51 @@ local plugins = {
     "folke/which-key.nvim",
     enabled = true,
   },
-  { "glepnir/lspsaga.nvim",
+  {
+    "glepnir/lspsaga.nvim",
     opts = overrides.lspsaga,
     init = require("core.utils").load_mappings "lspsaga",
     event = "BufRead",
     lazy = false,
     config = function()
-      require('lspsaga').setup({
+      require("lspsaga").setup {
         debug = true,
         finder_action_keys = {
-          open = "<cr>"
+          open = "<cr>",
         },
-      })
+      }
     end,
     dependencies = {
-      {"nvim-tree/nvim-web-devicons"},
+      { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
-      {"nvim-treesitter/nvim-treesitter"}
-    }
+      { "nvim-treesitter/nvim-treesitter" },
+    },
   },
   {
     "hrsh7th/nvim-cmp",
-    opts = overrides.cmp
+    opts = overrides.cmp,
   },
   {
     "vim-scripts/ReplaceWithRegister",
-    lazy = false
+    lazy = false,
   },
   {
     "tpope/vim-rails",
     lazy = false,
-    ft = "ruby"
+    ft = "ruby",
   },
   {
-"gbprod/yanky.nvim",
+    "gbprod/yanky.nvim",
     init = require("core.utils").load_mappings "yanky",
     event = "BufReadPost",
     config = function()
-      require("yanky").setup({
+      require("yanky").setup {
         highlight = {
           timer = 150,
-        }
-      })
+        },
+      }
     end,
-  }
+  },
 }
 
 return plugins
