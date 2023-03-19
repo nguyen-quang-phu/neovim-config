@@ -247,4 +247,5 @@ M.yanky = {
     ["P"] = { "<Plug>(YankyPutBefore)", "YankyPutBefore" },
   },
 }
+
 return M

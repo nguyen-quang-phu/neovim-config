@@ -110,6 +110,18 @@ local plugins = {
       require("auto-save").setup {}
     end,
   },
+  -- better increase/descrease
+  {
+    "monaqa/dial.nvim",
+    -- stylua: ignore
+    keys = {
+      { "<D-a>", function() return require("dial.map").inc_normal() end, expr = true, desc = "Increment" },
+      { "<D-x>", function() return require("dial.map").dec_normal() end, expr = true, desc = "Decrement" },
+    },
+    config = function()
+      require("custom.configs.dial")
+    end,
+  },
 }
 
 return plugins
