@@ -103,6 +103,13 @@ local plugins = {
       require "custom.configs.dressing"
     end,
   },
+  {
+    "Pocco81/auto-save.nvim",
+    lazy = false,
+    config = function()
+      require("auto-save").setup {}
+    end,
+  },
 }
 
 return plugins
