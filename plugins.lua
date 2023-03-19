@@ -22,7 +22,7 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
-  -- overrde plugin configs
+  -- override plugin configs
   {
     "nvim-treesitter/nvim-treesitter",
     opts = overrides.treesitter,
@@ -65,16 +65,10 @@ local plugins = {
     event = "BufRead",
     lazy = false,
     config = function()
-      require("lspsaga").setup {
-        debug = true,
-        finder_action_keys = {
-          open = "<cr>",
-        },
-      }
+      require "custom.configs.lspsaga"
     end,
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
-      --Please make sure you install markdown and markdown_inline parser
       { "nvim-treesitter/nvim-treesitter" },
     },
   },
@@ -96,11 +90,13 @@ local plugins = {
     init = require("core.utils").load_mappings "yanky",
     event = "BufReadPost",
     config = function()
-      require("yanky").setup {
-        highlight = {
-          timer = 150,
-        },
-      }
+      require "custom.configs.yanky"
+    end,
+  },
+  {
+    "stevearc/dressing.nvim",
+    config = function()
+      require "custom.configs.dressing"
     end,
   },
 }

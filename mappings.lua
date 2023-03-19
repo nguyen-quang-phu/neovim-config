@@ -236,6 +236,7 @@ M.lspsaga = {
   n = {
     ["gd"] = { "<Cmd>Lspsaga lsp_finder<CR>", "Lspsaga lsp_finder" },
     ["<D-.>"] = { "<Cmd>Lspsaga code_action<Cr>", "Lspsaga code_action" },
+    ["<F2>"] = { "<Cmd>Lspsaga rename<CR>", "Lspsaga rename" },
   },
 }
 
