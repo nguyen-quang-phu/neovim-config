@@ -148,6 +148,11 @@ local plugins = {
   {
     "semanticart/ruby-code-actions.nvim",
   },
+  {
+    "kana/vim-textobj-entire",
+    lazy = false,
+    dependencies = { { "kana/vim-textobj-user" } },
+  },
 }
 
 return plugins
