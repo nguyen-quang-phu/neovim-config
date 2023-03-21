@@ -75,10 +75,6 @@ local plugins = {
   {
     "hrsh7th/nvim-cmp",
     opts = overrides.cmp,
-    config = function()
-      require "plugins.configs.cmp"
-      require "custom.configs.cmp"
-    end,
   },
   {
     "vim-scripts/ReplaceWithRegister",
