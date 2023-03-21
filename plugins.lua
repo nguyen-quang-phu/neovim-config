@@ -145,6 +145,9 @@ local plugins = {
       require("trouble").setup {}
     end,
   },
+  {
+    "semanticart/ruby-code-actions.nvim",
+  },
 }
 
 return plugins

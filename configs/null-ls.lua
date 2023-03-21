@@ -1,5 +1,5 @@
 local present, null_ls = pcall(require, "null-ls")
-
+local ruby_code_actions = require "ruby-code-actions"
 if not present then
   return
 end
@@ -35,7 +35,8 @@ local sources = {
     command = "bundle",
     args = vim.list_extend({ "exec", "rubocop" }, formatting.rubocop._opts.args),
   },
-
+  ruby_code_actions.insert_frozen_string_literal,
+  ruby_code_actions.autocorrect_with_rubocop,
   --lua
   formatting.stylua,
 }
