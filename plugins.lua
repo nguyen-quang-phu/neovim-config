@@ -161,6 +161,13 @@ local plugins = {
     end,
     ft = { "markdown" },
   },
+  {
+    "kdheepak/lazygit.nvim",
+    lazy = false,
+  },
+  {
+    "tpope/vim-repeat",
+  },
 }
 
 return plugins
