@@ -54,6 +54,10 @@ M.comment = {
       "toggle comment",
     },
   },
+
+  i = {
+    ["<D-/>"] = { "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "toggle comment" },
+  },
 }
 
 -- more keybinds!

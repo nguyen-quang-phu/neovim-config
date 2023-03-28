@@ -5,7 +5,9 @@ end
 
 lspsaga.setup {
   debug = true,
-  finder_action_keys = {
-    open = "<cr>",
+  finder = {
+    keys = {
+      expand_or_jump = "<cr>",
+    },
   },
 }

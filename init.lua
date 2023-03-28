@@ -14,3 +14,4 @@ g.neovide_cursor_antialiasing = false
 g.neovide_cursor_animation_length = 0
 g.neovide_background_color = '1e1e1e'
 g.neovide_remember_window_size = true
+g.neovide_input_macos_alt_is_meta = true
