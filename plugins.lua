@@ -168,6 +168,12 @@ local plugins = {
   {
     "tpope/vim-repeat",
   },
+  {
+    "ckolkey/ts-node-action",
+    dependencies = { "nvim-treesitter" },
+    opts = {},
+    lazy = false,
+  },
 }
 
 return plugins

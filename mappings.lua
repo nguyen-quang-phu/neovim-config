@@ -241,6 +241,7 @@ M.lspsaga = {
     ["gd"] = { "<Cmd>Lspsaga lsp_finder<CR>", "Lspsaga lsp_finder" },
     ["<D-.>"] = { "<Cmd>Lspsaga code_action<Cr>", "Lspsaga code_action" },
     ["<F2>"] = { "<Cmd>Lspsaga rename<CR>", "Lspsaga rename" },
+    ["gh"] = { "cmd>Lspsaga hover_doc<CR>", "Lspsaga hover" },
   },
 }
 
@@ -249,6 +250,12 @@ M.yanky = {
     ["y"] = { "<Plug>(YankyYank)", "YankyYank" },
     ["p"] = { "<Plug>(YankyPutAfter)", "YankyPutAfter" },
     ["P"] = { "<Plug>(YankyPutBefore)", "YankyPutBefore" },
+  },
+}
+
+M.ts_node_action = {
+  n = {
+    ["gs"] = { "<cmd>NodeAction<cr>", "Trigger Node Action" },
   },
 }
 
