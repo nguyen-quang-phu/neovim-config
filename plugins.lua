@@ -163,6 +163,7 @@ local plugins = {
   },
   {
     "kdheepak/lazygit.nvim",
+    init = require("core.utils").load_mappings "lazy_git",
     lazy = false,
   },
   {

@@ -156,7 +156,18 @@ M.nvterm = {
   },
 }
 
-M.lspconfig = {}
+M.lspconfig = {
+  plugin = true,
+  n = {
+
+    ["gh"] = {
+      function()
+        vim.lsp.buf.hover()
+      end,
+      "lsp hover",
+    },
+  },
+}
 
 M.replace_with_register = {
   n = {
@@ -241,7 +252,6 @@ M.lspsaga = {
     ["gd"] = { "<Cmd>Lspsaga lsp_finder<CR>", "Lspsaga lsp_finder" },
     ["<D-.>"] = { "<Cmd>Lspsaga code_action<Cr>", "Lspsaga code_action" },
     ["<F2>"] = { "<Cmd>Lspsaga rename<CR>", "Lspsaga rename" },
-    ["gh"] = { "cmd>Lspsaga hover_doc<CR>", "Lspsaga hover" },
   },
 }
 
@@ -256,6 +266,12 @@ M.yanky = {
 M.ts_node_action = {
   n = {
     ["gs"] = { "<cmd>NodeAction<cr>", "Trigger Node Action" },
+  },
+}
+
+M.lazy_git = {
+  n = {
+    ["<leader>lg"] = { "<cmd>LazyGit<cr>", "LazyGit" },
   },
 }
 
