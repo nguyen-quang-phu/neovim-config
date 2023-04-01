@@ -73,8 +73,8 @@ M.telescope = {
 
   n = {
     -- find
-    ["<D-p>"] = { "<cmd> Telescope find_files <CR>", "find files" },
-    ["<S-D-f>"] = { "<cmd> Telescope live_grep <CR>", "live grep" },
+    ["<D-p>"] = { "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", "find files" },
+    ["<S-D-f>"] = { "<cmd>Telescope live_grep hidden=true no_ignore=true<cr>", "live grep" },
 
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
