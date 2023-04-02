@@ -223,6 +223,11 @@ local plugins = {
       )
     end,
   },
+
+  {
+    "lewis6991/gitsigns.nvim",
+    opts = overrides.gitsigns,
+  }
 }
 
 return plugins
