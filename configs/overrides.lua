@@ -17,6 +17,18 @@ M.treesitter = {
       "python",
     },
   },
+  endwise = {
+    enable = true,
+  },
+  textsubjects = {
+    enable = true,
+    prev_selection = ",", -- (Optional) keymap to select the previous selection
+    keymaps = {
+      ["."] = "textsubjects-smart",
+      [";"] = "textsubjects-container-outer",
+      ["i;"] = "textsubjects-container-inner",
+    },
+  },
   textobjects = {
     select = {
       enable = true,
@@ -108,4 +120,6 @@ M.cmp = {
 M.gitsigns = {
   current_line_blame = true,
 }
+
 return M
+

@@ -11,7 +11,6 @@ M.disabled = {
 }
 M.general = {
   n = {
-    [";"] = { ":", "enter command mode", opts = { nowait = true } },
     -- switch between windows
     ["<left>"] = { "<C-w>h", "window left" },
     ["<right>"] = { "<C-w>l", "window right" },

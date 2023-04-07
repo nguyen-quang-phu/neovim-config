@@ -29,6 +29,7 @@ local plugins = {
     dependencies = {
       {
         "nvim-treesitter/nvim-treesitter-textobjects",
+        "RRethy/nvim-treesitter-endwise",
       },
     },
   },
@@ -54,13 +55,13 @@ local plugins = {
   },
 
   -- Install a plugin
-  {
-    "max397574/better-escape.nvim",
-    event = "InsertEnter",
-    config = function()
-      require("better_escape").setup()
-    end,
-  },
+  -- {
+  --   "max397574/better-escape.nvim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     require("better_escape").setup()
+  --   end,
+  -- },
 
   -- To make a plugin not be loaded
   -- {
@@ -85,6 +86,7 @@ local plugins = {
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
       { "nvim-treesitter/nvim-treesitter" },
+      { "RRethy/nvim-treesitter-textsubjects" },
     },
   },
   {
@@ -227,7 +229,22 @@ local plugins = {
   {
     "lewis6991/gitsigns.nvim",
     opts = overrides.gitsigns,
-  }
+  },
+  {
+    "bkad/CamelCaseMotion",
+    lazy = false,
+  },
+  {
+    "tpope/vim-abolish",
+    lazy = false,
+  },
+  {
+    "echasnovski/mini.nvim",
+    lazy = false,
+    config = function()
+      require("mini.move").setup {}
+    end,
+  },
 }
 
 return plugins
