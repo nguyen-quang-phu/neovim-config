@@ -266,6 +266,19 @@ local plugins = {
     end,
     init = require("core.utils").load_mappings "hop",
   },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  {
+    "numToStr/Comment.nvim",
+    keys = { "gc", "gb" },
+    init = require("core.utils").load_mappings "comment",
+    config = function()
+      require("Comment").setup {
+        pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+      }
+    end,
+  },
 }
 
 return plugins

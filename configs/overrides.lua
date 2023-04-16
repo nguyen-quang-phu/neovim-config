@@ -72,6 +72,10 @@ M.treesitter = {
         ["<leader>A"] = "@parameter.inner",
       },
     },
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+    },
   },
 }
 
@@ -122,4 +126,3 @@ M.gitsigns = {
 }
 
 return M
-
