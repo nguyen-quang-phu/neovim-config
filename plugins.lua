@@ -245,6 +245,27 @@ local plugins = {
       require("mini.move").setup {}
     end,
   },
+  {
+    "ggandor/leap.nvim",
+  },
+  {
+    "mg979/vim-visual-multi",
+    lazy = false,
+    config = function()
+      vim.g.VM_maps["Find Under"] = "<C-d>"
+    end,
+  },
+  {
+    "phaazon/hop.nvim",
+    lazy = false,
+    config = function()
+      local hop = require "hop"
+      hop.setup {
+        keys = "etovxqpdygfblzhckisuran",
+      }
+    end,
+    init = require("core.utils").load_mappings "hop",
+  },
 }
 
 return plugins

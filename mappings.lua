@@ -4,6 +4,7 @@ M.disabled = {
   n = {
     ["gr"] = "",
     ["<C-c>"] = "",
+    ["K"] = "",
   },
   v = {
     ["gr"] = "",
@@ -29,8 +30,51 @@ M.general = {
     ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr><cmd> w <CR>", " ", opts = { nowait = true } },
   },
   i = {
-
     ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
+  },
+  c = {
+    ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
+  },
+}
+
+M.hop = {
+  plugin = true,
+  n = {
+    ["f"] = {
+      function()
+        require("hop").hint_char1 {
+          direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+          current_line_only = true,
+        }
+      end,
+    },
+    ["F"] = {
+      function()
+        require("hop").hint_char1 {
+          direction = require("hop.hint").HintDirection.BEFORE_CURSOR,
+          current_line_only = true,
+        }
+      end,
+    },
+    ["t"] = {
+      function()
+        require("hop").hint_char1 {
+          direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+          current_line_only = true,
+          hint_offset = -1,
+        }
+      end,
+    },
+    ["T"] = {
+      function()
+        require("hop").hint_char1 {
+          direction = require("hop.hint").HintDirection.AFTER_CURSOR,
+          current_line_only = true,
+          hint_offset = -1,
+        }
+      end,
+    },
+    ["<leader>w"] = { "<cmd>HopWord<cr>" },
   },
 }
 
