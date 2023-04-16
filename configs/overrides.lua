@@ -76,6 +76,9 @@ M.treesitter = {
       enable = true,
       enable_autocmd = false,
     },
+    autotag = {
+      enable = true,
+    },
   },
 }
 

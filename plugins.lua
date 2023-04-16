@@ -258,6 +258,12 @@ local plugins = {
   {
     "phaazon/hop.nvim",
     lazy = false,
+    keys = {
+      {
+        "<leader>w",
+        "<cmd>HopWord<cr>",
+      },
+    },
     config = function()
       local hop = require "hop"
       hop.setup {
@@ -268,6 +274,13 @@ local plugins = {
   },
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
+    config = function()
+      require("nvim-ts-autotag").setup()
+    end,
   },
   {
     "numToStr/Comment.nvim",
