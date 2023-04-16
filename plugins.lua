@@ -293,6 +293,24 @@ local plugins = {
     end,
   },
   { "nvim-treesitter/nvim-treesitter-context", lazy = false },
+  {
+    "simrat39/symbols-outline.nvim",
+    config = function()
+      require("symbols-outline").setup {
+        keymaps = {
+          close = { "" },
+          toggle_preview = "gh",
+        },
+      }
+    end,
+    lazy = false,
+    keyss = {
+      {
+        "<S-D-o>",
+        "<cmd>SymbolsOutline<cr>",
+      },
+    },
+  },
 }
 
 return plugins
