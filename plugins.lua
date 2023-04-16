@@ -304,12 +304,24 @@ local plugins = {
       }
     end,
     lazy = false,
-    keyss = {
+    keys = {
       {
         "<S-D-o>",
         "<cmd>SymbolsOutline<cr>",
       },
     },
+  },
+  {
+    "kevinhwang91/nvim-ufo",
+    dependencies = "kevinhwang91/promise-async",
+    lazy = false,
+    config = function()
+      require("ufo").setup {
+        provider_selector = function(bufnr, filetype, buftype)
+          return { "treesitter", "indent" }
+        end,
+      }
+    end,
   },
 }
 
