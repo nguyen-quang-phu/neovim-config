@@ -292,6 +292,7 @@ local plugins = {
       }
     end,
   },
+  { "nvim-treesitter/nvim-treesitter-context", lazy = false },
 }
 
 return plugins
