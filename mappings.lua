@@ -28,9 +28,12 @@ M.general = {
     -- Copy all
     ["<D-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
     ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr><cmd> w <CR>", " ", opts = { nowait = true } },
+    ["<S-M-j>"] = { "<esc><cmd>copy .<cr>" },
+    ["<S-M-k>"] = { "<esc><cmd>copy .-1<cr>" },
   },
   i = {
     ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
+    ["<S-D-j>"] = { "<esc><cmd>copy .<cr>" },
   },
   c = {
     ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
