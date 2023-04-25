@@ -9,6 +9,9 @@ local formatting = require("null-ls").builtins.formatting
 local code_actions = require("null-ls").builtins.code_actions
 
 local sources = {
+  -- refactor
+  code_actions.refactoring,
+
   -- check spell
   diagnostics.cspell.with {
     diagnostics_format = "[cspell] #{m}\n(#{c})",
@@ -37,8 +40,17 @@ local sources = {
   },
   ruby_code_actions.insert_frozen_string_literal,
   ruby_code_actions.autocorrect_with_rubocop,
+
   --lua
   formatting.stylua,
+
+  -- go
+  diagnostics.golangci_lint.with {
+    diagnostics_format = "[golangci_lint] #{m}\n(#{c})",
+  },
+  diagnostics.gospel.with {
+    diagnostics_format = "[gospel] #{m}\n(#{c})",
+  }
 }
 
 null_ls.setup {

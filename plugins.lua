@@ -243,6 +243,7 @@ local plugins = {
     lazy = false,
     config = function()
       require("mini.move").setup {}
+      require("mini.cursorword").setup {}
     end,
   },
   {
@@ -269,6 +270,19 @@ local plugins = {
       hop.setup {
         keys = "etovxqpdygfblzhckisuran",
       }
+      local directions = require("hop.hint").HintDirection
+      vim.keymap.set("", "f", function()
+        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true }
+      end, { remap = true })
+      vim.keymap.set("", "F", function()
+        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true }
+      end, { remap = true })
+      vim.keymap.set("", "t", function()
+        hop.hint_char1 { direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 }
+      end, { remap = true })
+      vim.keymap.set("", "T", function()
+        hop.hint_char1 { direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 }
+      end, { remap = true })
     end,
     init = require("core.utils").load_mappings "hop",
   },
@@ -322,6 +336,37 @@ local plugins = {
         end,
       }
     end,
+  },
+  {
+    "ray-x/go.nvim",
+    dependencies = { -- optional packages
+      "ray-x/guihua.lua",
+      "neovim/nvim-lspconfig",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("go").setup()
+    end,
+    event = { "CmdlineEnter" },
+    ft = { "go", "gomod" },
+    build = ':lua require("go.install").update_all_sync()', -- if you need to install/update all binaries
+  },
+  {
+    "ray-x/lsp_signature.nvim",
+    opts = {
+      bind = true, -- This is mandatory, otherwise border config won't get registered.
+      handler_opts = {
+        border = "rounded",
+      },
+    },
+    lazy = false,
+  },
+  {
+    "axelvc/template-string.nvim",
+    config = function()
+      require("template-string").setup()
+    end,
+    lazy = false,
   },
 }
 
