@@ -53,23 +53,6 @@ local plugins = {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
   },
-
-  -- Install a plugin
-  -- {
-  --   "max397574/better-escape.nvim",
-  --   event = "InsertEnter",
-  --   config = function()
-  --     require("better_escape").setup()
-  --   end,
-  -- },
-
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- Uncomment if you want to re-enable which-key
   {
     "folke/which-key.nvim",
     enabled = true,
@@ -169,14 +152,6 @@ local plugins = {
     "kana/vim-textobj-entire",
     lazy = false,
     dependencies = { { "kana/vim-textobj-user" } },
-  },
-  {
-    "iamcco/markdown-preview.nvim",
-    build = "cd app && npm install",
-    init = function()
-      vim.g.mkdp_filetypes = { "markdown" }
-    end,
-    ft = { "markdown" },
   },
   {
     "kdheepak/lazygit.nvim",
@@ -364,6 +339,21 @@ local plugins = {
       require("template-string").setup()
     end,
     lazy = false,
+  },
+  {
+    "vim-test/vim-test",
+    lazy = false,
+  },
+  {
+    "vimwiki/vimwiki",
+    lazy = false,
+  },
+  {
+    "0x00-ketsu/markdown-preview.nvim",
+    ft = { "md", "markdown", "mkd", "mkdn", "mdwn", "mdown", "mdtxt", "mdtext", "rmd", "wiki" },
+    config = function()
+      require("markdown-preview").setup {}
+    end,
   },
 }
 
