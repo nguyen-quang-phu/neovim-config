@@ -21,15 +21,15 @@ M.general = {
     ["<D-w>s"] = { "<C-w>s", "split horizontal" },
     ["<D-w>o"] = { "<C-w>o", "only window" },
     ["<D-w>q"] = { "<C-w>q", "close window" },
-
     -- save
     ["<D-s>"] = { "<cmd> w <CR>", "save file" },
-
+    ["<D-[>"] = { "<esc>", "ESC" },
     -- Copy all
     ["<D-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
     ["<D-f>"] = { "<cmd>lua vim.lsp.buf.format{async=true}<cr><cmd> w <CR>", " ", opts = { nowait = true } },
     ["<S-M-j>"] = { "<esc><cmd>copy .<cr>" },
     ["<S-M-k>"] = { "<esc><cmd>copy .-1<cr>" },
+    ["<leader><CR>"] = { "<cmd>source ~/.config/nvim/lua/custom/init.lua<CR>" },
   },
   i = {
     ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },
@@ -83,7 +83,6 @@ M.hop = {
 
 M.comment = {
   plugin = true,
-
   -- toggle comment in both modes
   n = {
     ["<D-/>"] = {
@@ -93,14 +92,12 @@ M.comment = {
       "toggle comment",
     },
   },
-
   v = {
     ["<D-/>"] = {
       "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>",
       "toggle comment",
     },
   },
-
   i = {
     ["<D-/>"] = { "<ESC><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<CR>", "toggle comment" },
   },
@@ -116,19 +113,15 @@ M.nvimtree = {
 
 M.telescope = {
   plugin = true,
-
   n = {
     -- find
     ["<D-p>"] = { "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", "find files" },
     ["<S-D-f>"] = { "<cmd>Telescope live_grep hidden=true no_ignore=true<cr>", "live grep" },
-
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "git status" },
-
     -- pick a hidden term
     ["<leader>pt"] = { "<cmd> Telescope terms <CR>", "pick hidden term" },
-
     -- theme switcher
     ["<leader>th"] = { "<cmd> Telescope themes <CR>", "nvchad themes" },
   },
@@ -136,7 +129,6 @@ M.telescope = {
 
 M.nvterm = {
   plugin = true,
-
   t = {
     -- toggle in terminal mode
     ["<A-i>"] = {
@@ -145,14 +137,12 @@ M.nvterm = {
       end,
       "toggle floating term",
     },
-
     ["<A-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
     },
-
     ["<A-v>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
@@ -160,7 +150,6 @@ M.nvterm = {
       "toggle vertical term",
     },
   },
-
   n = {
     -- toggle in normal mode
     ["<A-i>"] = {
@@ -169,21 +158,18 @@ M.nvterm = {
       end,
       "toggle floating term",
     },
-
     ["<A-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
     },
-
     ["<A-v>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
       "toggle vertical term",
     },
-
     -- new
 
     ["<leader>h"] = {
@@ -192,7 +178,6 @@ M.nvterm = {
       end,
       "new horizontal term",
     },
-
     ["<leader>v"] = {
       function()
         require("nvterm.terminal").new "vertical"
@@ -205,7 +190,6 @@ M.nvterm = {
 M.lspconfig = {
   plugin = true,
   n = {
-
     ["gh"] = {
       function()
         vim.lsp.buf.hover()
@@ -227,7 +211,6 @@ M.replace_with_register = {
 
 M.nvterm = {
   plugin = true,
-
   t = {
     -- toggle in terminal mode
     ["<D-`>"] = {
@@ -236,14 +219,12 @@ M.nvterm = {
       end,
       "toggle floating term",
     },
-
     ["<A-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
     },
-
     ["<A-v>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
@@ -251,7 +232,6 @@ M.nvterm = {
       "toggle vertical term",
     },
   },
-
   n = {
     -- toggle in normal mode
     ["<D-`>"] = {
@@ -260,21 +240,18 @@ M.nvterm = {
       end,
       "toggle floating term",
     },
-
     ["<A-h>"] = {
       function()
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
     },
-
     ["<A-v>"] = {
       function()
         require("nvterm.terminal").toggle "vertical"
       end,
       "toggle vertical term",
     },
-
     -- new
 
     ["<leader>h"] = {
@@ -283,7 +260,6 @@ M.nvterm = {
       end,
       "new horizontal term",
     },
-
     ["<leader>v"] = {
       function()
         require("nvterm.terminal").new "vertical"
