@@ -355,6 +355,10 @@ local plugins = {
       require("markdown-preview").setup {}
     end,
   },
+  {
+    "tpope/vim-projectionist",
+    lazy = false,
+  },
 }
 
 return plugins
