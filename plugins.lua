@@ -160,13 +160,18 @@ local plugins = {
   },
   {
     "tpope/vim-repeat",
-  },
-  {
-    "ckolkey/ts-node-action",
-    dependencies = { "nvim-treesitter" },
-    opts = {},
     lazy = false,
   },
+  {
+    "AndrewRadev/switch.vim",
+    lazy = false,
+  },
+  -- {
+  --   "ckolkey/ts-node-action",
+  --   dependencies = { "nvim-treesitter" },
+  --   opts = {},
+  --   lazy = false,
+  -- },
   {
     "windwp/nvim-autopairs",
     opts = {
@@ -225,7 +230,8 @@ local plugins = {
     "mg979/vim-visual-multi",
     lazy = false,
     config = function()
-      vim.g.VM_maps["Find Under"] = "<C-d>"
+      vim.g.VM_maps["Find Under"] = "<D-d>"
+      vim.g.VM_maps["Find Subword Under"] = "<D-d>"
     end,
   },
   {
@@ -355,8 +361,29 @@ local plugins = {
       require("markdown-preview").setup {}
     end,
   },
+  -- {
+  --   "tpope/vim-projectionist",
+  --   lazy = false,
+  --   ft = { "javascript", "typescript" },
+  -- },
   {
-    "tpope/vim-projectionist",
+    "editorconfig/editorconfig-vim",
+    lazy = false,
+  },
+  {
+    "vim-scripts/PreserveNoEOL",
+    lazy = false,
+  },
+  {
+    "AndrewRadev/rails_extra.vim",
+    lazy = false,
+  },
+  {
+    "AndrewRadev/splitjoin.vim",
+    lazy = false,
+  },
+  {
+    "Exafunction/codeium.vim",
     lazy = false,
   },
 }

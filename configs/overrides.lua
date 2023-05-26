@@ -2,14 +2,25 @@ local M = {}
 
 M.treesitter = {
   ensure_installed = {
-    "vim",
-    "lua",
     "html",
     "css",
     "javascript",
     "c",
     "markdown",
     "markdown_inline",
+    "astro",
+    "glimmer",
+    "graphql",
+    "lua",
+    "php",
+    "python",
+    "scss",
+    "svelte",
+    "tsx",
+    "twig",
+    "typescript",
+    "vim",
+    "vue",
   },
   indent = {
     enable = true,
@@ -105,7 +116,6 @@ M.nvimtree = {
     enable = true,
     ignore = false,
   },
-
   renderer = {
     highlight_git = true,
     icons = {

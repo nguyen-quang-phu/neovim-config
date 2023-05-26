@@ -285,11 +285,11 @@ M.yanky = {
   },
 }
 
-M.ts_node_action = {
-  n = {
-    ["gs"] = { "<cmd>NodeAction<cr>", "Trigger Node Action" },
-  },
-}
+-- M.ts_node_action = {
+--   n = {
+--     ["gs"] = { "<cmd>NodeAction<cr>", "Trigger Node Action" },
+--   },
+-- }
 
 M.lazy_git = {
   n = {

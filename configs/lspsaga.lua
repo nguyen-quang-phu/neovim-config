@@ -10,4 +10,11 @@ lspsaga.setup {
       expand_or_jump = "<cr>",
     },
   },
+  lightbulb = {
+    enable = true,
+    enable_in_insert = false,
+    sign = true,
+    sign_priority = 40,
+    virtual_text = true,
+  },
 }
