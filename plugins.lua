@@ -386,6 +386,13 @@ local plugins = {
     "Exafunction/codeium.vim",
     lazy = false,
   },
+  {
+    "nvimdev/hlsearch.nvim",
+    event = "BufRead",
+    config = function()
+      require("hlsearch").setup()
+    end,
+  },
 }
 
 return plugins
