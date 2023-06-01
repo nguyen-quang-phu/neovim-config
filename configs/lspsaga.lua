@@ -11,7 +11,7 @@ lspsaga.setup {
     },
   },
   lightbulb = {
-    enable = true,
+    enable = false,
     enable_in_insert = false,
     sign = true,
     sign_priority = 40,

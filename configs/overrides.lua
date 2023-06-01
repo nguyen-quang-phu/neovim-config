@@ -131,6 +131,7 @@ M.cmp = {
   mapping = {
     ["<up>"] = require("cmp").mapping.select_prev_item(),
     ["<down>"] = require("cmp").mapping.select_next_item(),
+    ["<Tab>"] = vim.NIL,
   },
 }
 
