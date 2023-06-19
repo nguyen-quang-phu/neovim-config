@@ -393,6 +393,10 @@ local plugins = {
       require("hlsearch").setup()
     end,
   },
+  {
+    "tzachar/highlight-undo.nvim",
+    lazy = false,
+  },
 }
 
 return plugins
