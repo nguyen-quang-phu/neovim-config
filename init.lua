@@ -16,6 +16,9 @@ g.neovide_background_color = "1e1e1e"
 g.neovide_remember_window_size = true
 g.neovide_input_macos_alt_is_meta = true
 
+g.splitjoin_split_mapping= ''
+g.splitjoin_join_mapping= ''
+
 g.camelcasemotion_key = "<leader>"
 g["test#strategy"] = "neovim"
 g.vimwiki_list = { { path = "~/wiki", syntax = "markdown", ext = ".md" } }

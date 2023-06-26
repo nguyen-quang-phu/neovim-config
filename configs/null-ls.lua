@@ -62,6 +62,9 @@ local sources = {
 null_ls.setup {
   debug = true,
   sources = sources,
+  diagnostic_config = {
+    signs = false,
+  },
 }
 -- require("null-ls").register {
 --   name = "more_actions",

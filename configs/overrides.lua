@@ -31,6 +31,12 @@ M.treesitter = {
   endwise = {
     enable = true,
   },
+  -- rainbow = {
+  --   enable = true,
+  --   -- disable = { 'jsx', 'cpp' },
+  --   query = "rainbow-parens",
+  --   strategy = require("ts-rainbow").strategy.global,
+  -- },
   textsubjects = {
     enable = true,
     prev_selection = ",", -- (Optional) keymap to select the previous selection
