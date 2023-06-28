@@ -361,11 +361,11 @@ local plugins = {
       require("markdown-preview").setup {}
     end,
   },
-  -- {
-  --   "tpope/vim-projectionist",
-  --   lazy = false,
-  --   ft = { "javascript", "typescript" },
-  -- },
+  {
+    "tpope/vim-projectionist",
+    lazy = false,
+    ft = { "javascript", "typescript" },
+  },
   {
     "editorconfig/editorconfig-vim",
     lazy = false,
