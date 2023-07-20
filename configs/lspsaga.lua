@@ -6,9 +6,11 @@ end
 lspsaga.setup {
   debug = true,
   finder = {
+    max_height = 0.6,
     keys = {
-      expand_or_jump = "<cr>",
-    },
+      vsplit = 'v',
+      edit = '<cr>'
+    }
   },
   lightbulb = {
     enable = false,

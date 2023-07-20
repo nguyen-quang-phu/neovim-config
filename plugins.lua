@@ -52,13 +52,16 @@ local plugins = {
   {
     "nvim-tree/nvim-tree.lua",
     opts = overrides.nvimtree,
+    dependencies = {
+      { "nvim-tree/nvim-web-devicons" },
+    }
   },
   {
     "folke/which-key.nvim",
     enabled = true,
   },
   {
-    "glepnir/lspsaga.nvim",
+    "nvimdev/lspsaga.nvim",
     opts = overrides.lspsaga,
     init = require("core.utils").load_mappings "lspsaga",
     event = "BufRead",
