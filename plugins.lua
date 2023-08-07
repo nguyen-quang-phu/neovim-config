@@ -159,7 +159,7 @@ local plugins = {
   {
     "kdheepak/lazygit.nvim",
     init = require("core.utils").load_mappings "lazy_git",
-    lazy = false,
+    lazy = false
   },
   {
     "tpope/vim-repeat",
@@ -444,6 +444,10 @@ local plugins = {
       }
     end,
   },
+  {
+    "AckslD/swenv.nvim",
+    lazy = false,
+  }
 }
 
 return plugins
