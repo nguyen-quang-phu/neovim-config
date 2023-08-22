@@ -5,6 +5,8 @@ M.disabled = {
     ["gr"] = "",
     ["<C-c>"] = "",
     ["K"] = "",
+    ["j"] = "",
+    ["k"] = "",
   },
   v = {
     ["gr"] = "",
@@ -30,8 +32,9 @@ M.general = {
     ["<S-M-j>"] = { "<esc><cmd>copy .<cr>" },
     ["<S-M-k>"] = { "<esc><cmd>copy .-1<cr>" },
     ["<leader><CR>"] = { "<cmd>source ~/.config/nvim/lua/custom/init.lua<CR>" },
-    ["gJ"]= {"<cmd>:SplitjoinJoin<cr>"},
-    ["gS"]= {"<cmd>:SplitjoinSplit<cr>"},
+    ["gJ"] = { "<cmd>:SplitjoinJoin<cr>" },
+    ["gS"] = { "<cmd>:SplitjoinSplit<cr>" },
+    ["yp"] = { '<cmd>let @+=expand("%:p")<cr>' },
   },
   i = {
     ["<D-v>"] = { "<c-r>+", " ", opts = { nowait = true } },

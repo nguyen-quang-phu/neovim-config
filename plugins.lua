@@ -54,7 +54,7 @@ local plugins = {
     opts = overrides.nvimtree,
     dependencies = {
       { "nvim-tree/nvim-web-devicons" },
-    }
+    },
   },
   {
     "folke/which-key.nvim",
@@ -159,7 +159,7 @@ local plugins = {
   {
     "kdheepak/lazygit.nvim",
     init = require("core.utils").load_mappings "lazy_git",
-    lazy = false
+    lazy = false,
   },
   {
     "tpope/vim-repeat",
@@ -444,10 +444,19 @@ local plugins = {
       }
     end,
   },
-  {
-    "AckslD/swenv.nvim",
-    lazy = false,
-  }
+  -- {
+  --   "m4xshen/hardtime.nvim",
+  --   dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+  --   opts = {},
+  --   config = function()
+  --     require("hardtime").setup {}
+  --   end,
+  --   lazy = false,
+  --   keys = {
+  --     { "j", 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"' },
+  --     { "k", 'v:count || mode(1)[0:1] == "no" ? "k" : "gk"' },
+  --   },
+  -- },
 }
 
 return plugins
