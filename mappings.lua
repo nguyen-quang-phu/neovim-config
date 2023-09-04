@@ -19,12 +19,12 @@ M.general = {
     ["<right>"] = { "<C-w>l", "window right" },
     ["<down>"] = { "<C-w>j", "window down" },
     ["<up>"] = { "<C-w>k", "window up" },
-    ["<D-w>v"] = { "<C-w>v", "split vertical" },
-    ["<D-w>s"] = { "<C-w>s", "split horizontal" },
-    ["<D-w>o"] = { "<C-w>o", "only window" },
-    ["<D-w>q"] = { "<C-w>q", "close window" },
+    ["<leader>wv"] = { "<C-w>v", "split vertical" },
+    ["<leader>ws"] = { "<C-w>s", "split horizontal" },
+    ["<leader>wo"] = { "<C-w>o", "only window" },
+    ["<leader>wq"] = { "<C-w>q", "close window" },
     -- save
-    ["<D-s>"] = { "<cmd> w <CR>", "save file" },
+    ["<leader>s"] = { "<cmd> w <CR>", "save file" },
     ["<D-[>"] = { "<esc>", "ESC" },
     -- Copy all
     ["<D-c>"] = { "<cmd> %y+ <CR>", "copy whole file" },
@@ -111,8 +111,8 @@ M.comment = {
 -- more keybinds!
 M.nvimtree = {
   n = {
-    ["<D-b>"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
-    ["<S-D-e>"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
+    ["<leader>b"] = { "<cmd> NvimTreeToggle <CR>", "toggle nvimtree" },
+    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "focus nvimtree" },
   },
 }
 
@@ -121,7 +121,7 @@ M.telescope = {
   n = {
     -- find
     ["<D-p>"] = { "<cmd>Telescope find_files hidden=true no_ignore=true<cr>", "find files" },
-    ["<S-D-f>"] = { "<cmd>Telescope live_grep hidden=true no_ignore=true<cr>", "live grep" },
+    ["<leader>f"] = { "<cmd>Telescope live_grep hidden=true no_ignore=true<cr>", "live grep" },
     -- git
     ["<leader>cm"] = { "<cmd> Telescope git_commits <CR>", "git commits" },
     ["<leader>gt"] = { "<cmd> Telescope git_status <CR>", "git status" },
